@@ -1,0 +1,33 @@
+{
+  "name": "react-native-mathjax",
+  "version": "1.0.0",
+  "description": "Render Mathjax content in React Native Webview",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm tun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calcal12/react-native-mathjax.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "mathjax",
+    "latex",
+    "maths",
+    "equation"
+  ],
+  "author": "Calvin Kei <calvin.conceptz@gmail.com> (https://www.linkedin.com/in/chi-wing-kei-237364140/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calcal12/react-native-mathjax/issues"
+  },
+  "homepage": "https://github.com/calcal12/react-native-mathjax#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^16.2.0",
+    "react-native": "^0.52.1",
+    "react-native-loader": "^1.2.1"
+  }
+}
