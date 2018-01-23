@@ -19,7 +19,7 @@
     "equation"
   ],
   "author": "Calvin Kei <calvin.conceptz@gmail.com> (https://www.linkedin.com/in/chi-wing-kei-237364140/)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/calcal12/react-native-mathjax/issues"
   },
