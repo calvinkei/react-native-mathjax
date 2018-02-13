@@ -93,7 +93,7 @@ public class MainApplication extends Application implements ReactApplication {
     p {
       font-size: 16px;
     }
-    `}
+  `}
 />
 
 ```
