@@ -3,7 +3,7 @@ Render Mathjax content in React Native Webview with auto height adjustment.
 
 This project is based on [react-native-autoheight-webview](https://github.com/iou90/react-native-autoheight-webview).
 
-I am using [my own fork](https://github.com/calcal12/react-native-autoheight-webview) of the module and added a DOM change detection feature as MathJax changes the DOM after loading the page, which makes the height calculation in the original module inaccurate.
+I am using [my own fork](https://github.com/calcal12/react-native-autoheight-webview) of the module and added a DOM change detection feature as MathJax changes the DOM after page load, which makes height calculation in the original module inaccurate.
 
 # Showcase
 TODO
@@ -12,7 +12,7 @@ TODO
 1. `npm install react-native-mathjax --save`
 2. For Android, `react-native link`
 3. in MainApplication.java
-```
+```java
 import com.dscj.autoheightwebview.AutoHeightWebViewPackage; // Add this
 
 public class MainApplication extends Application implements ReactApplication {
@@ -28,7 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
 ```
 
 # Usage
-```
+```javascript
 <MathJax
     // HTML content with MathJax support
     html={'$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$<br><p>This is an equation</p>'}
