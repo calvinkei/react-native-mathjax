@@ -28,6 +28,6 @@
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-native": "^0.52.1",
-    "react-native-loader": "^1.2.1"
+    "react-native-autoheight-webview": "https://github.com/calcal12/react-native-autoheight-webview/tarball/master"
   }
 }

@@ -1,29 +1,10 @@
 import React from 'react';
-import { WebView, View, StyleSheet } from 'react-native';
-import { Bubbles } from 'react-native-loader';
 import _ from 'lodash';
+import AutoHeightWebView from 'react-native-autoheight-webview';
 
 class MathJax extends React.Component {
-	constructor(props) {
-		super();
-		this.state = {
-			height: 12,
-			loaded: false,
-			repeated: 0,
-		};
-	}
 
-	componentWillReceiveProps(props) {
-		if (props.content !== this.props.content) {
-			this.setState({
-				height: 12,
-				loaded: false,
-				repeated: 0,
-			});
-		}
-	}
-
-	htmlContent(content) {
+	wrapMathjax(content) {
 
 		const defaultOptions = {
 			messageStyle: 'none',
@@ -40,7 +21,7 @@ class MathJax extends React.Component {
 		};
 
 		const options = JSON.stringify(
-			_.merge(defaultOptions, this.props.options)
+			_.merge(defaultOptions, this.props.mathJaxOptions)
 		);
 
 		return `
@@ -49,82 +30,18 @@ class MathJax extends React.Component {
          MathJax.Hub.Config(${options});
        </script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
-      <div id='container'>${content}</div>
-      <style>
-        .MathJax_Display{
-          display: inline-block !important;
-          width: auto !important
-        }
-        body {
-          font-family: sans-serif;
-          font-size: ${this.props.fontSize || 14}px !important;
-          margin: 5;
-					${this.props.color ? `color: ${this.props.color}` : ''}
-        }
-      </style>
-      <script>
-        window.setInterval(function(){
-          window.location.hash = new Date().getTime();
-          document.title = document.getElementById('container').offsetHeight;
-        }, 100)
-      </script>
+      ${content}
     `;
-	}
-
-	onNavigationStateChange(navState) {
-		const height = Number(navState.title);
-		if (this.state.repeated >= 9 && this.state.height === height) {
-			this.setState({
-				height,
-				loaded: true,
-				repeated: 0,
-			});
-		} else if (this.state.height === height && height > 0) {
-			this.setState({
-				repeated: this.state.repeated + 1,
-			});
-		} else {
-			this.setState({ height });
-		}
 	}
 
 	render() {
 		return (
-			<View style={{ flex: 1 }}>
-				<WebView
-					javaScriptEnabled={true}
-					scrollEnabled={true}
-					source={{ html: this.htmlContent(this.props.content) }}
-					javaScriptEnabledAndroid={true}
-					style={{
-						flex: 1,
-						height: this.state.height,
-						margin: 10,
-						opacity: this.state.loaded ? 1 : 0,
-					}}
-					onNavigationStateChange={this.onNavigationStateChange.bind(this)}
-					contentInset={{ top: -5, bottom: -5, right: -5, left: -5 }}
-				/>
-				{!this.state.loaded && (
-					<View style={styles.centerContainer}>
-						<Bubbles size={3} color="#ddd" />
-					</View>
-				)}
-			</View>
+			<AutoHeightWebView
+				source={{ html: this.wrapMathjax(this.props.html).bind(this) }}
+				...this.props
+			/>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	centerContainer: {
-		position: 'absolute',
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-});
 
 export default MathJax;
