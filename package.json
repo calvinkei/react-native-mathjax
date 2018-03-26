@@ -1,6 +1,6 @@
 {
   "name": "react-native-mathjax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Render Mathjax content in React Native Webview",
   "main": "index.js",
   "scripts": {
