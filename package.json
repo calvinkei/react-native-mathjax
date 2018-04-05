@@ -1,6 +1,6 @@
 {
   "name": "react-native-mathjax",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Render Mathjax content in React Native Webview",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/calcal12/react-native-mathjax.git"
+    "url": "git+https://github.com/calvinkei/react-native-mathjax.git"
   },
   "keywords": [
     "react",
@@ -21,11 +21,11 @@
   "author": "Calvin Kei <calvin.conceptz@gmail.com> (https://www.linkedin.com/in/chi-wing-kei-237364140/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/calcal12/react-native-mathjax/issues"
+    "url": "https://github.com/calvinkei/react-native-mathjax/issues"
   },
-  "homepage": "https://github.com/calcal12/react-native-mathjax#readme",
+  "homepage": "https://github.com/calvinkei/react-native-mathjax#readme",
   "dependencies": {
     "lodash": "^4.17.4",
-    "react-native-autoheight-webview": "https://github.com/calcal12/react-native-autoheight-webview/tarball/master"
+    "react-native-autoheight-webview": "https://github.com/calvinkei/react-native-autoheight-webview/tarball/master"
   }
 }
