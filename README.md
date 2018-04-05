@@ -11,21 +11,6 @@ TODO
 # Installation
 1. `npm install react-native-mathjax --save`
 2. For Android, `react-native link`
-3. in MainApplication.java
-```java
-import com.dscj.autoheightwebview.AutoHeightWebViewPackage; // Add this
-
-public class MainApplication extends Application implements ReactApplication {
-  //...
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    //...
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-        //...
-        new AutoHeightWebViewPackage() // Add this
-        //...
-```
 
 # Usage
 ```javascript
