@@ -35,7 +35,7 @@ class MathJax extends React.Component {
 			<AutoHeightWebView
 				source={{ html: this.wrapMathjax(this.props.html) }}
 				{...this.props}
-				/>
+			/>
 		);
 	}
 }
