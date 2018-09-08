@@ -30,7 +30,6 @@ class MathJax extends React.Component {
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 			<script type="text/x-mathjax-config">
 				MathJax.Hub.Config(${options});
-
 				MathJax.Hub.Queue(function() {
 					window.postMessage(document.getElementById("formula").clientHeight);
 				});
