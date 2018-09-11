@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 
 import { WebView } from 'react-native';
 
@@ -34,7 +33,7 @@ class MathJax extends React.Component {
 
 	wrapMathjax(content) {
 		const options = JSON.stringify(
-			_.merge(defaultOptions, this.props.mathJaxOptions)
+			Object.assign({}, defaultOptions, this.props.mathJaxOptions)
 		);
 
 		return `
