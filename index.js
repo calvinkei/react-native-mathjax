@@ -3,15 +3,15 @@ import { View, WebView } from 'react-native';
 
 const defaultOptions = {
 	messageStyle: 'none',
-	extensions: [ 'tex2jax.js' ],
-	jax: [ 'input/TeX', 'output/HTML-CSS' ],
+	extensions: ['tex2jax.js'],
+	jax: ['input/TeX', 'output/HTML-CSS'],
 	tex2jax: {
-		inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-		displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$', '$$'], ['\\[', '\\]']],
 		processEscapes: true,
 	},
 	TeX: {
-		extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js']
+		extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js', 'noUndefined.js']
 	}
 };
 
@@ -41,14 +41,15 @@ class MathJax extends React.Component {
 
 				MathJax.Hub.Queue(function() {
 					var height = document.documentElement.scrollHeight;
-
 					window.postMessage(String(height));
+					document.getElementById("formula").style.visibility = '';
 				});
 			</script>
 
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
-
-			${content}
+			<div id="formula" style="visibility: hidden;">
+				${content}
+			</div>
 		`;
 	}
 	render() {
@@ -58,14 +59,14 @@ class MathJax extends React.Component {
 		const props = Object.assign({}, this.props, { html: undefined });
 
 		return (
-      <View style={{ height: this.state.height, ...props.style }}>
-        <WebView
-          scrollEnabled={false}
-          onMessage={ this.handleMessage.bind(this) }
-          source={{ html }}
-          {...props}
-        />
-      </View>
+			<View style={{ height: this.state.height, ...props.style }}>
+				<WebView
+					scrollEnabled={false}
+					onMessage={this.handleMessage.bind(this)}
+					source={{ html }}
+					{...props}
+				/>
+			</View>
 		);
 	}
 }
