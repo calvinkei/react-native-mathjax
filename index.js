@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, WebView } from 'react-native';
+import { WebView } from 'react-native';
 
 const defaultOptions = {
 	messageStyle: 'none',
@@ -59,14 +59,13 @@ class MathJax extends React.Component {
 		const props = Object.assign({}, this.props, { html: undefined });
 
 		return (
-			<View style={{ height: this.state.height, ...props.style }}>
-				<WebView
-					scrollEnabled={false}
-					onMessage={this.handleMessage.bind(this)}
-					source={{ html }}
-					{...props}
-				/>
-			</View>
+			<WebView
+				style={{ height: this.state.height, ...props.style }}
+				scrollEnabled={false}
+				onMessage={this.handleMessage.bind(this)}
+				source={{ html }}
+				{...props}
+			/>
 		);
 	}
 }
