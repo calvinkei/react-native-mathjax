@@ -1,23 +1,24 @@
 {
-  "name": "demo",
-  "version": "0.0.1",
-  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
   "dependencies": {
-    "react": "^16.0.0",
-    "react-native": "0.50.2",
-    "react-native-mathjax": "^2.0.0"
+    "expo": "~39.0.2",
+    "expo-status-bar": "~1.0.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
+    "react-native-mathjax": "^2.1.2",
+    "react-native-web": "~0.13.12",
+    "react-native-webview": "10.7.0"
   },
   "devDependencies": {
-    "babel-jest": "22.4.3",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "22.4.3",
-    "react-test-renderer": "^16.3.0-alpha.1"
+    "@babel/core": "~7.9.0"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "private": true
 }

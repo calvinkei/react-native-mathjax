@@ -42,7 +42,7 @@ class MathJax extends React.Component {
 
 				MathJax.Hub.Queue(function() {
 					var height = document.documentElement.scrollHeight;
-					window.postMessage(String(height));
+					window.ReactNativeWebView.postMessage(String(height));
 					document.getElementById("formula").style.visibility = '';
 				});
 			</script>
