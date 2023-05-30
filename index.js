@@ -62,6 +62,7 @@ class MathJax extends React.Component {
 		return (
 			<View style={{ height: this.state.height, ...props.style }}>
 				<WebView
+                			androidHardwareAccelerationDisabled
 					scrollEnabled={false}
 					onMessage={this.handleMessage.bind(this)}
 					source={{ html }}
